@@ -7,8 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  public name = "James";
+  public name = "Jameson";
+  public myId = "testId";
+  public isDisabled = true;
   public siteURL = window.location.href;
+  public successClass = "text-success";
+  public hasError = false;
+  public isSpecial = true;
+  public highlightColor = "orange";
+  public greeting = "";
+
+  public messageClasses = {
+    "text-success": !this.hasError;
+    "text-danger": this.hasError;
+    "text-special": this.isSpecial;
+  }
+
+  public titleStyles = {
+    color: "blue",
+    fontStyle: "italic"
+  }
 
   constructor() { }
 
@@ -17,6 +35,11 @@ export class TestComponent implements OnInit {
 
   greetUser() {
     return "Hi! Welcome to the app " + this.name;
+  }
+
+  onClick(event) {
+    console.log("Welcome to this Angular 5 app.");
+    this.greeting=event.type;
   }
 
 }

@@ -1,3 +1,21 @@
-<h1>Welcome to the test component {{name}}.</h1>
+<h1 class="text-success">Welcome to the test component {{name}}.</h1>
 <h2>{{greetUser()}}</h2>
+<h1 [class]="successClass">Welcome to the test component {{name}}.</h1>
 <h3>{{name}} is accessing {{siteURL}} at the moment.</h3>
+<h1 [class.text-danger]="hasError">Welcome to the test component {{name}}.</h1>
+<h3>{{name}} is accessing {{siteURL}} at the moment.</h3>
+<h1 [ngClass]="messageClasses">Welcome to the test component {{name}}.</h1>
+
+
+<input type="text" [id]="myId" value="Rakesh">
+<input [disabled]="isDisabled" type="text" [id]="myId" value="Narang">
+<input bind-disabled="!isDisabled" type="text" [id]="myId" value="B.Tech.">
+
+<h1 [style.color]="'pink'">Style binding normal</h1>
+<h1 [style.color]="hasError ? 'red' : 'green'">Style binding conditional</h1>
+<h1 [style.color]="highlightColor">Highlight color style binding</h1>
+<h1 [ngStyle]="titleStyles">ngStyle example</h1>
+
+<button type="button" name="button" (click)="onClick($event)">Greet</button>
+<button type="button" name="button" (click)="greeting='Welcome to this Angular 5 app.'">Greet</button>
+{{greeting}}
